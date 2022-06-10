@@ -1,0 +1,38 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="sub-container">
+                <p class="title">HOME</p>
+                <input class="scoreboard" id="home-score" placeholder="0" max="99" disabled>
+                <div class="button-container">
+                    <button class="score-btn" id="h1-btn">+1</button>
+                    <button class="score-btn" id="h2-btn">+2</button>
+                    <button class="score-btn" id="h3-btn">+3</button>
+                </div>
+            </div>
+            <div class="sub-container">
+                <div class="timer-container">
+                    <input class="timer-box" id="timer-minutes">
+                    <input class="timer-box" id="timer-seconds">
+                </div>
+                <div class="sub-container-2">
+                    <button id="timer-start" onclick="timerStart()">Start Timer</button>
+                    <button id="new-game" onclick="reset()">Reset</button>
+                </div>
+            </div>
+            <div class="sub-container">
+                <p class="title">AWAY</p>
+                <input class="scoreboard" id="away-score" placeholder="0" max="99" disabled>
+                <div class="button-container">
+                    <button class="score-btn" id="a1-btn">+1</button>
+                    <button class="score-btn" id="a2-btn">+2</button>
+                    <button class="score-btn" id="a3-btn">+3</button>
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
