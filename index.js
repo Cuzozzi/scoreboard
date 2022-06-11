@@ -15,36 +15,42 @@ const a3Btn = document.getElementById("a3-btn")
 h1Btn.addEventListener("click", () => {
     if (homeScore.value < 99) {
         homeScore.value = Number(homeScore.value) + 1
+        leader()
     }
 })
 
 h2Btn.addEventListener("click", function() {
     if (homeScore.value < 98) {
         homeScore.value = Number(homeScore.value) + 2
+        leader()
     }
 })
 
 h3Btn.addEventListener("click", function() {
     if (homeScore.value < 97) {
         homeScore.value = Number(homeScore.value) + 3
+        leader()
     }
 })
 
 a1Btn.addEventListener("click", function() {
     if (awayScore.value < 99) {
         awayScore.value = Number(awayScore.value) + 1
+        leader()
     }
 })
 
 a2Btn.addEventListener("click", function() {
     if (awayScore.value < 98) {
         awayScore.value = Number(awayScore.value) + 2
+        leader()
     }
 })
 
 a3Btn.addEventListener("click", function() {
     if (awayScore.value < 97) {
         awayScore.value = Number(awayScore.value) + 3
+        leader()
     }
 })
 
@@ -61,6 +67,11 @@ function leader() {
         homeScore.classList.remove("timer-box-loser")
         awayScore.classList.add("timer-box-loser")
         awayScore.classList.remove("timer-box-leader")
+    } else if (homeScore.value === awayScore.value) {
+        homeScore.classList.remove("timer-box-leader")
+        homeScore.classList.remove("timer-box-loser")
+        awayScore.classList.remove("timer-box-loser")
+        awayScore.classList.remove("timer-box-leader")
     } else {
         homeScore.classList.remove("timer-box-leader")
         homeScore.classList.add("timer-box-loser")
@@ -72,11 +83,9 @@ function leader() {
 function timerUpdate() {
     if (timerMinutes.value >= 00 && timerSeconds.value > 00) {
         timerSeconds.value -= 1
-        leader()
     } else if (timerMinutes.value > 00 && timerSeconds.value == 0) {
         timerMinutes.value -= 1
         timerSeconds.value = 59
-        leader()
     } else {
         clearInterval(intervalID)
     }
